@@ -16,7 +16,10 @@ Expected Output: [0, 1, 1, 4, 4]
 
 def sortedSquaredArray(array):
     # Write your code here.
-    pass
+    squared = [n ** 2 for n in array]
+    return (sorted(squared))
+
+    #pass
 
 if __name__ == '__main__':
     # Test cases (you can add more here to test your solution)

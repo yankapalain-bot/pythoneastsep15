@@ -6,6 +6,21 @@ def calculate_fibonacci(n):
     calculate_fibonacci(1) -> 1
     calculate_fibonacci(5) -> 5
     """
+  
     # TODO: Student must write their code here.
-    # For now, let's provide a placeholder that will fail the test.
-    return -1
+    if n == 0: 
+        return 0
+    elif n < 0: 
+        raise ValueError("The number must be positive integer ")
+        
+    
+    x, y = 0, 1
+    for _ in range(2, n + 1):
+        x, y = y, x + y
+
+    return y
+
+
+
+ 
+

@@ -24,7 +24,17 @@ Expected Output: False (because -1 comes before 10 in the sequence, but after in
 
 def isValidSubsequence(array, sequence):
     # Write your code here.
-    pass
+    array_idx = 0
+    sequence_idx = 0
+    if len(sequence) == 0:
+        return False
+    else:        
+        while array_idx < len(array) and sequence_idx < len(sequence):
+            if array[array_idx] == sequence[sequence_idx]:
+                sequence_idx += 1
+            array_idx += 1
+        return sequence_idx == len(sequence)
+    #pass
 
 if __name__ == '__main__':
     # Test cases (you can add more here to test your solution)
@@ -33,3 +43,4 @@ if __name__ == '__main__':
     print(f"Test 3: array=[1, 2, 3, 4], sequence=[1, 3, 4] -> {isValidSubsequence([1, 2, 3, 4], [1, 3, 4])}")
     print(f"Test 4: array=[1, 2, 3, 4], sequence=[2, 4] -> {isValidSubsequence([1, 2, 3, 4], [2, 4])}")
     print(f"Test 5: array=[1, 2, 3, 4], sequence=[5] -> {isValidSubsequence([1, 2, 3, 4], [5])}")
+    print(f"Test 6: array=[1, 2, 3], sequence=[] -> {isValidSubsequence([1, 2, 3], [])}")
